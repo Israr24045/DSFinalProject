@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Season Canvas</title>
+	<link rel="stylesheet" href="/style.css">
+	<style>html,body{height:100%}</style>
+</head>
+<body>
+	<div id="login-screen" class="screen">
+		<div class="login-container">
+			<h1>Season Canvas</h1>
+			<div id="auth-section">
+				<div id="login-form">
+					<h2>Login</h2>
+					<input id="login-email" placeholder="Email">
+					<input id="login-password" type="password" placeholder="Password">
+					<button id="login-btn">Login</button>
+					<button id="show-register-btn">Need an account? Register</button>
+				</div>
+				<div id="register-form" style="display:none">
+					<h2>Register</h2>
+					<input id="register-email" placeholder="Email">
+					<input id="register-username" placeholder="Username">
+					<input id="register-password" type="password" placeholder="Password">
+					<button id="register-btn">Create Account</button>
+					<button id="show-login-btn">Back to Login</button>
+				</div>
+			</div>
+			<button id="guest-btn">View as Guest</button>
+		</div>
+	</div>
+
+	<div id="canvas-screen" class="screen" style="display:none">
+		<div class="container">
+			<header>
+				<h1>Season Canvas</h1>
+				<div class="episode-info">
+					<div id="episode-number">Episode 1</div>
+					<div id="time-remaining">0:00</div>
+					<div id="season">Season: Calm</div>
+				</div>
+				<button id="logout-btn">Logout</button>
+				<button id="login-btn-header" style="display:none">Login</button>
+			</header>
+
+			<div class="main-content">
+				<div class="left-panel">
+					<div class="section">
+						<h3>Colors</h3>
+						<div id="color-palette"></div>
+					</div>
+					<div class="section">
+						<h3>Mood</h3>
+						<select id="mood-selector">
+							<option value="0">Happy</option>
+							<option value="1">Sad</option>
+							<option value="2" selected>Calm</option>
+							<option value="3">Energetic</option>
+						</select>
+					</div>
+					<div class="section">
+						<h3>Cooldown</h3>
+						<div id="cooldown">Ready!</div>
+					</div>
+					<div class="section">
+						<h3>Quests</h3>
+						<div id="quests"></div>
+					</div>
+					<div class="section">
+						<button id="export-png">Export PNG</button>
+						<button id="export-video">Export Video</button>
+					</div>
+				</div>
+
+				<div class="canvas-panel">
+					<div class="canvas-container">
+						<canvas id="canvas"></canvas>
+					</div>
+					<div class="canvas-controls">
+						<button id="zoom-in">Zoom In</button>
+						<button id="zoom-out">Zoom Out</button>
+						<button id="reset-view">Reset View</button>
+					</div>
+				</div>
+
+				<div class="right-panel">
+					<div class="section chat-section">
+						<h3>Chat</h3>
+						<div id="chat-messages"></div>
+						<div class="chat-input">
+							<input id="chat-message" placeholder="Type a message...">
+							<button id="send-chat">Send</button>
+						</div>
+						<div id="guest-note" style="display:none; margin-top:10px; font-size:12px; color:#666;">You are viewing as guest. Login to send messages. Cooldown is 10 seconds.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/app.js"></script>
+</body>
+</html>
